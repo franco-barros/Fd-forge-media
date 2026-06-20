@@ -12,6 +12,8 @@ import PracticeAreasMobile from "./practiceareasmobile";
 
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
 
+import AnimatedCircles from "../animations/animatedcircles/AnimatedCircles";
+
 interface PracticeArea {
   id: string;
 
@@ -131,30 +133,36 @@ const PracticeAreas: React.FC = () => {
 
   return (
     <section id="section-practiceareas" className={styles.practiceAreasSection}>
-      <FadeInOnScroll>
-        <div className={styles.badgeWrapper}>
-          <span className={styles.badge}>
-            <Layers size={18} />
-            Lo que hacemos
-          </span>
-        </div>
+      {/* BACKGROUND */}
+      <AnimatedCircles />
 
-        <p className={styles.description}>
-          Diseñamos estrategias digitales, creamos contenido de alto impacto y
-          desarrollamos campañas publicitarias orientadas a resultados para
-          impulsar el crecimiento de tu marca.
-        </p>
-      </FadeInOnScroll>
-
-      <FadeInOnScroll delay={0.15}>
-        {isMobile ? (
-          <PracticeAreasMobile practiceAreas={practiceAreas} />
-        ) : (
-          <div className={styles.gridDesktop}>
-            {practiceAreas.map(renderArea)}
+      {/* CONTENIDO */}
+      <div className={styles.content}>
+        <FadeInOnScroll>
+          <div className={styles.badgeWrapper}>
+            <span className={styles.badge}>
+              <Layers size={18} />
+              Lo que hacemos
+            </span>
           </div>
-        )}
-      </FadeInOnScroll>
+
+          <p className={styles.description}>
+            Diseñamos estrategias digitales, creamos contenido de alto impacto y
+            desarrollamos campañas publicitarias orientadas a resultados para
+            impulsar el crecimiento de tu marca.
+          </p>
+        </FadeInOnScroll>
+
+        <FadeInOnScroll delay={0.15}>
+          {isMobile ? (
+            <PracticeAreasMobile practiceAreas={practiceAreas} />
+          ) : (
+            <div className={styles.gridDesktop}>
+              {practiceAreas.map(renderArea)}
+            </div>
+          )}
+        </FadeInOnScroll>
+      </div>
     </section>
   );
 };

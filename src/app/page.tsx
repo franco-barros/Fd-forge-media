@@ -17,15 +17,17 @@ export default function Home() {
 
         <AboutUs />
 
-        <PracticeAreas />
-
         <InfiniteCarousel />
+
+        <PracticeAreas />
 
         <FAQSection />
 
+        <InfiniteCarousel />
+
         <ContactMe />
 
-        <WhatsAppButton phoneNumber="+542644171075" />
+        <WhatsAppButton phoneNumber="+542645878987" />
 
         <BackToTheTopButton />
       </main>

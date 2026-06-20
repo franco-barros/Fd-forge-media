@@ -31,34 +31,32 @@ const PracticeAreasMobile: React.FC<Props> = ({ practiceAreas }) => {
     slides: {
       perView: 1,
 
-      spacing: 16,
+      spacing: 20,
     },
   });
 
   return (
     <div ref={sliderRef} className={`keen-slider ${styles.sliderMobile}`}>
       {practiceAreas.map((area) => (
-        <article
-          key={area.id}
-          id={`area-${area.id}`}
-          className={`keen-slider__slide ${styles.areaCard}`}
-        >
-          {area.icon && <div className={styles.iconWrapper}>{area.icon}</div>}
+        <div key={area.id} className={`keen-slider__slide ${styles.slide}`}>
+          <article id={`area-${area.id}`} className={styles.areaCard}>
+            {area.icon && <div className={styles.iconWrapper}>{area.icon}</div>}
 
-          <h4>{area.title}</h4>
+            <h4>{area.title}</h4>
 
-          <ul className={styles.itemList}>
-            {area.items.map((item, index) => (
-              <li key={index}>
-                <span className={styles.checkCircle}>
-                  <FaCheck size={10} />
-                </span>
+            <ul className={styles.itemList}>
+              {area.items.map((item, index) => (
+                <li key={index}>
+                  <span className={styles.checkCircle}>
+                    <FaCheck size={10} />
+                  </span>
 
-                {item}
-              </li>
-            ))}
-          </ul>
-        </article>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
       ))}
     </div>
   );

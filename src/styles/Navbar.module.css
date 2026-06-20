@@ -226,6 +226,8 @@
   border: none;
 
   cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
 .leftIconWrapper {
@@ -245,12 +247,13 @@
 /* ======================= */
 /* RESPONSIVE */
 /* ======================= */
-
 @media (max-width: 768px) {
   .container {
     justify-content: center;
 
-    padding: 1.7rem 1rem;
+    padding: 2rem 1rem;
+
+    position: relative;
   }
 
   .links {
@@ -260,6 +263,8 @@
   .menuButton {
     display: block;
 
+    position: absolute;
+
     right: 1rem;
 
     top: 50%;
@@ -267,9 +272,19 @@
     transform: translateY(-50%);
   }
 
-  .leftIconWrapper {
-    width: 200px;
+  /* LOGO CENTRADO */
 
-    height: 36px;
+  .floatingLeftLogo {
+    left: 50%;
+
+    top: 8px;
+
+    transform: translateX(-50%);
+  }
+
+  .leftIconWrapper {
+    width: 190px;
+
+    height: 42px;
   }
 }

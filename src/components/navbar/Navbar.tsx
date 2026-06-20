@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
   const navLinks = useMemo(
     () => [
       { id: "hero", label: "Inicio" },
-      { id: "aboutus", label: "Sobre mí" },
+      { id: "aboutus", label: "Sobre nosotros" },
       { id: "section-practiceareas", label: "Servicios" },
       { id: "faq", label: "Preguntas Frecuentes" },
       { id: "contact", label: "Contacto" },

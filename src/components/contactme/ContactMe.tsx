@@ -139,7 +139,7 @@ const ContactMe: React.FC = () => {
 
             <p>
               <FaWhatsapp />
-              +54 264 XXX-XXXX
+              +542645878987
             </p>
 
             <h4 className={styles.infoTitle}>
@@ -147,7 +147,7 @@ const ContactMe: React.FC = () => {
               Correo electrónico
             </h4>
 
-            <p>contacto@fdforgemedia.com</p>
+            <p>fdforgemedia@gmail.com</p>
           </div>
         </SlideInFromLeft>
 

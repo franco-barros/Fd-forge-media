@@ -1,34 +1,94 @@
 .menuOverlayContainer {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.95);
+
+  background: rgba(1, 1, 1, 0.95);
+
+  backdrop-filter: blur(12px);
+
   z-index: 1100;
+
   overflow: hidden;
+
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  font-family: var(--font-inter);
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: var(--font-rethink-sans);
 }
+
+/* ===================== */
+/* CONTENEDOR */
+/* ===================== */
 
 .animatedMenu {
   position: absolute;
-  top: 0;
-  left: 0;
+
+  inset: 0;
+
   width: 100%;
+
   height: 100%;
-  background: linear-gradient(135deg, #8d6b24 0%, #b89b63 45%, #c7ae7d 100%);
-  padding: 4rem 2rem;
-  box-sizing: border-box;
+
+  background: linear-gradient(180deg, #010101 0%, #02152f 40%, #010101 100%);
+
   display: flex;
+
   flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
   overflow-y: auto;
+
+  padding: 4rem 2rem;
+
   z-index: 1101;
-  font-family: var(--font-rethink-sans);
 }
+
+.animatedMenu::before,
+.animatedMenu::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0451d7,
+    #4b88ff,
+    #0451d7,
+    transparent
+  );
+
+  box-shadow: 0 0 18px rgba(4, 81, 215, 0.8);
+}
+
+.animatedMenu::before {
+  top: 85px;
+}
+
+.animatedMenu::after {
+  bottom: 85px;
+}
+
+/* ===================== */
+/* ANIMACIONES */
+/* ===================== */
 
 .open {
   animation: expandMenu 0.5s forwards;
 }
+
 .closing {
   animation: collapseMenu 0.5s forwards;
 }
@@ -38,79 +98,160 @@
     clip-path: circle(0% at 50% 50%);
     opacity: 0;
   }
+
   100% {
     clip-path: circle(100vmax at 50% 50%);
     opacity: 1;
   }
 }
+
 @keyframes collapseMenu {
   0% {
     clip-path: circle(100vmax at 50% 50%);
     opacity: 1;
   }
+
   100% {
     clip-path: circle(0% at 50% 50%);
     opacity: 0;
   }
 }
 
+/* ===================== */
+/* BOTÓN CERRAR */
+/* ===================== */
+
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1.25rem;
-  background: transparent;
-  border: none;
-  font-size: 2rem;
+
+  top: 25px;
+
+  right: 25px;
+
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  background: rgba(255, 255, 255, 0.08);
+
   color: #ffffff;
+
+  font-size: 2rem;
+
   cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition: all 0.3s ease;
+
   z-index: 1102;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .closeButton:hover {
-  transform: scale(1.2);
-  color: #c7ae7d;
+  transform: rotate(90deg);
+
+  background: #0451d7;
+
+  box-shadow: 0 0 20px rgba(4, 81, 215, 0.8);
 }
 
+/* ===================== */
+/* ITEMS */
+/* ===================== */
+
 .menuItemsContainer {
-  margin-top: 4rem;
   display: flex;
+
   flex-direction: column;
+
+  align-items: center;
+
   gap: 1.5rem;
-  align-items: flex-start;
+
+  width: 100%;
+
+  max-width: 500px;
 }
 
 .menuItem {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: 600;
+  width: 100%;
+
+  padding: 1.2rem 2rem;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(10px);
+
   color: #ffffff;
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
   cursor: pointer;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 0.8rem;
+
   opacity: 0;
+
   transform: translateY(20px);
+
   animation: fadeIn 0.5s forwards;
-  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+
+  transition: all 0.3s ease;
 }
 
 .menuItem:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: #c7ae7d;
-  transform: scale(1.05);
+  transform: translateY(-4px);
+
+  background: rgba(4, 81, 215, 0.18);
+
+  border-color: rgba(4, 81, 215, 0.5);
+
+  box-shadow: 0 0 25px rgba(4, 81, 215, 0.35);
+
+  color: #4b88ff;
 }
 
+/* ===================== */
+/* ITEM ACTIVO */
+/* ===================== */
+
 .activeItem {
-  color: #114137;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(4, 81, 215, 0.25),
+    rgba(75, 136, 255, 0.15)
+  );
+
+  border: 1px solid rgba(4, 81, 215, 0.6);
+
+  color: #4b88ff;
+
+  box-shadow: 0 0 25px rgba(4, 81, 215, 0.4);
 }
 
 .activeIcon {
-  color: #114137;
+  color: #4b88ff;
+
   animation: balanceo 1.5s infinite ease-in-out;
 }
 
@@ -118,27 +259,38 @@
   0% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(-10deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
+
   75% {
     transform: rotate(10deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
 }
 
+/* ===================== */
+/* FADE ITEMS */
+/* ===================== */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
+
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
+
     transform: translateY(0);
   }
 }
@@ -146,18 +298,57 @@
 .menuItemsContainer .menuItem:nth-of-type(1) {
   animation-delay: 0.2s;
 }
+
 .menuItemsContainer .menuItem:nth-of-type(2) {
   animation-delay: 0.3s;
 }
+
 .menuItemsContainer .menuItem:nth-of-type(3) {
   animation-delay: 0.4s;
 }
+
 .menuItemsContainer .menuItem:nth-of-type(4) {
   animation-delay: 0.5s;
 }
+
 .menuItemsContainer .menuItem:nth-of-type(5) {
   animation-delay: 0.6s;
 }
+
 .menuItemsContainer .menuItem:nth-of-type(6) {
   animation-delay: 0.7s;
+}
+
+/* ===================== */
+/* MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+  .menuItemsContainer {
+    max-width: 100%;
+  }
+
+  .menuItem {
+    font-size: 1.1rem;
+
+    padding: 1rem 1.4rem;
+  }
+
+  .closeButton {
+    width: 48px;
+
+    height: 48px;
+
+    top: 20px;
+
+    right: 20px;
+  }
+
+  .animatedMenu::before {
+    top: 75px;
+  }
+
+  .animatedMenu::after {
+    bottom: 75px;
+  }
 }
