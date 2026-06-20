@@ -61,7 +61,7 @@ const Hero = () => {
         <div className={styles.buttons}>
           <button
             className={`${styles.btn} ${styles.btnPrimary}`}
-            onClick={() => handleScrollTo("services")}
+            onClick={() => handleScrollTo("section-practiceareas")}
           >
             Nuestros servicios
           </button>

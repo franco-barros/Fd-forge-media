@@ -173,6 +173,41 @@
 }
 
 /* ========================= */
+/* DOTS */
+/* ========================= */
+
+.wrapper {
+  width: 100%;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  transform: scale(1.2);
+  background: rgba(4, 81, 215, 0.5);
+}
+
+.activeDot {
+  background: linear-gradient(135deg, #0451d7, #1b6cff);
+  transform: scale(1.3);
+}
+
+/* ========================= */
 /* MOBILE PEQUEÑO */
 /* ========================= */
 
