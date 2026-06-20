@@ -1,0 +1,107 @@
+.faqSection {
+  width: 100%;
+
+  padding: 7rem 1.5rem;
+
+  background: #010101;
+
+  font-family: var(--font-rethink-sans);
+
+  overflow: hidden;
+
+  position: relative;
+
+  scroll-margin-top: 20px;
+}
+
+/* ======================= */
+/* BADGE */
+/* ======================= */
+
+.badgeWrapper {
+  display: flex;
+
+  justify-content: center;
+
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  padding: 0.75rem 1.3rem;
+
+  border-radius: 999px;
+
+  background: rgba(4, 81, 215, 0.1);
+
+  border: 1px solid rgba(4, 81, 215, 0.35);
+
+  color: #1b6cff;
+
+  font-weight: 700;
+
+  font-size: 1rem;
+}
+
+/* ======================= */
+/* TITULO */
+/* ======================= */
+
+.title {
+  text-align: center;
+
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+
+  font-weight: 800;
+
+  color: #f8f8f8;
+
+  line-height: 1.2;
+
+  margin-bottom: 1.8rem;
+}
+
+/* ======================= */
+/* DESCRIPCIÓN */
+/* ======================= */
+
+.description {
+  max-width: 850px;
+
+  margin: 0 auto 4rem;
+
+  text-align: center;
+
+  color: #b8b8b8;
+
+  font-size: 1.08rem;
+
+  line-height: 1.9;
+
+  padding: 0 1rem;
+}
+
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .faqSection {
+    padding: 5rem 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+
+    margin-bottom: 3rem;
+  }
+}

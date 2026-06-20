@@ -1,0 +1,187 @@
+/* ======================= */
+/* TABS */
+/* ======================= */
+
+.tabList {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-bottom: 3rem;
+}
+
+.tabItem {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.6rem;
+
+  padding: 0.9rem 1.5rem;
+
+  background: #0d1117;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  color: #b8b8b8;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.tabItem:hover {
+  border-color: rgba(4, 81, 215, 0.35);
+
+  color: #f8f8f8;
+}
+
+.tabItemActive {
+  background: rgba(4, 81, 215, 0.12);
+
+  border-color: rgba(4, 81, 215, 0.45);
+
+  color: #f8f8f8;
+}
+
+/* ======================= */
+/* PREGUNTAS */
+/* ======================= */
+
+.questionList {
+  max-width: 950px;
+
+  margin: auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1.2rem;
+}
+
+.questionItem {
+  width: 100%;
+
+  background: #0d1117;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 22px;
+
+  padding: 1.5rem 1.8rem;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.questionItem:hover {
+  border-color: rgba(4, 81, 215, 0.35);
+}
+
+.questionOpen {
+  border-color: rgba(4, 81, 215, 0.45);
+
+  background: rgba(4, 81, 215, 0.06);
+}
+
+/* ======================= */
+/* HEADER */
+/* ======================= */
+
+.questionHeader {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 1rem;
+}
+
+.questionText {
+  flex: 1;
+
+  text-align: left;
+
+  color: #f8f8f8;
+
+  font-size: 1.05rem;
+
+  font-weight: 600;
+}
+
+/* ======================= */
+/* RESPUESTA */
+/* ======================= */
+
+.answer {
+  margin-top: 1.4rem;
+
+  padding-top: 1.4rem;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #b8b8b8;
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+
+  text-align: left;
+}
+
+/* ======================= */
+/* ICONO */
+/* ======================= */
+
+.chevron {
+  color: #0451d7;
+
+  flex-shrink: 0;
+
+  transition: transform 0.25s ease;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .tabList {
+    gap: 0.8rem;
+  }
+
+  .tabItem {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .questionItem {
+    padding: 1.25rem;
+  }
+
+  .questionText {
+    font-size: 1rem;
+  }
+
+  .answer {
+    font-size: 0.95rem;
+  }
+}

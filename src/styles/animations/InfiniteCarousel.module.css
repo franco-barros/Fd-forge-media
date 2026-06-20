@@ -1,0 +1,167 @@
+.wrapper {
+  width: 100%;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background: #010101;
+
+  padding: 2rem 0;
+
+  display: flex;
+
+  align-items: center;
+}
+
+/* ======================= */
+/* LÍNEAS DECORATIVAS */
+/* ======================= */
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0451d7,
+    #1b6cff,
+    #0451d7,
+    transparent
+  );
+
+  box-shadow: 0 0 18px rgba(4, 81, 215, 0.45);
+
+  z-index: 3;
+}
+
+.wrapper::before {
+  top: 0;
+}
+
+.wrapper::after {
+  bottom: 0;
+}
+
+/* ======================= */
+/* EFECTO DIFUMINADO */
+/* ======================= */
+
+.fadeLeft,
+.fadeRight {
+  position: absolute;
+
+  top: 0;
+
+  width: 120px;
+
+  height: 100%;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.fadeLeft {
+  left: 0;
+
+  background: linear-gradient(90deg, #010101, transparent);
+}
+
+.fadeRight {
+  right: 0;
+
+  background: linear-gradient(270deg, #010101, transparent);
+}
+
+/* ======================= */
+/* TRACK */
+/* ======================= */
+
+.track {
+  display: flex;
+
+  align-items: center;
+
+  width: max-content;
+
+  animation: scroll 22s linear infinite;
+}
+
+/* ======================= */
+/* ITEMS */
+/* ======================= */
+
+.item {
+  color: #f8f8f8;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  white-space: nowrap;
+}
+
+/* ======================= */
+/* SEPARADOR */
+/* ======================= */
+
+.separator {
+  margin: 0 2rem;
+
+  color: #0451d7;
+
+  font-size: 1.3rem;
+
+  text-shadow: 0 0 12px rgba(4, 81, 215, 0.6);
+}
+
+/* ======================= */
+/* ANIMACIÓN */
+/* ======================= */
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 1.5rem 0;
+  }
+
+  .item {
+    font-size: 1rem;
+  }
+
+  .separator {
+    margin: 0 1.5rem;
+
+    font-size: 1.1rem;
+  }
+
+  .fadeLeft,
+  .fadeRight {
+    width: 60px;
+  }
+}
