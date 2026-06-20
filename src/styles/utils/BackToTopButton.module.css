@@ -1,26 +1,19 @@
 .backToTopButton {
   position: fixed;
-
   bottom: 1.5rem;
-
   left: 1.5rem;
 
-  width: 56px;
-
-  height: 56px;
+  width: 60px; /* 👈 más grande */
+  height: 60px;
 
   border: none;
-
   border-radius: 50%;
-
   cursor: pointer;
 
   z-index: 10000;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
   background: linear-gradient(135deg, #0451d7, #1b6cff);
@@ -28,76 +21,132 @@
   color: #f8f8f8;
 
   box-shadow:
-    0 10px 25px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(4, 81, 215, 0.25);
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(4, 81, 215, 0.35);
 
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 
   overflow: hidden;
+
+  animation: floatButton 3s ease-in-out infinite;
 }
 
-/* Brillo superior */
+/* ======================= */
+/* BRILLO SUPERIOR */
+/* ======================= */
 
 .backToTopButton::before {
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 0;
-
+  display: none;
   width: 100%;
-
   height: 2px;
 
-  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
 
   opacity: 0.6;
 }
 
-/* Hover */
+/* ======================= */
+/* SHIMMER EFFECT */
+/* ======================= */
+
+.backToTopButton::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  animation: shimmer 4s infinite linear;
+}
+
+/* ======================= */
+/* HOVER */
+/* ======================= */
 
 .backToTopButton:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px) scale(1.05);
 
   box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.45),
-    0 0 28px rgba(4, 81, 215, 0.45);
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 40px rgba(4, 81, 215, 0.55);
 }
 
-/* Click */
+/* ======================= */
+/* ACTIVE */
+/* ======================= */
 
 .backToTopButton:active {
-  transform: scale(0.96);
+  transform: scale(0.95);
 }
 
-/* Icono */
+/* ======================= */
+/* ICONO */
+/* ======================= */
 
 .icon {
-  font-size: 26px;
-
+  font-size: 28px;
   color: #f8f8f8;
-
   pointer-events: none;
-
   z-index: 2;
 }
 
-/* Mobile */
+/* ======================= */
+/* ANIMACIONES */
+/* ======================= */
+
+@keyframes floatButton {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* ======================= */
+/* MOBILE */
+/* ======================= */
 
 @media (max-width: 768px) {
   .backToTopButton {
-    width: 50px;
-
-    height: 50px;
-
+    width: 54px;
+    height: 54px;
     bottom: 1rem;
-
     left: 1rem;
   }
 
   .icon {
-    font-size: 22px;
+    font-size: 24px;
   }
 }

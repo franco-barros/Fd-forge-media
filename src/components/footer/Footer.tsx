@@ -19,34 +19,28 @@ const Footer = () => {
     const section = document.getElementById(id);
 
     if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-      });
+      section.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const sections = [
     { id: "hero", label: "Inicio" },
-
     { id: "aboutus", label: "Sobre Nosotros" },
-
     { id: "services", label: "Servicios" },
-
     { id: "contact", label: "Contacto" },
   ];
 
   return (
     <footer id="footer" className={styles.footer}>
       <div className={styles.content}>
-        {/* INFORMACIÓN */}
-
+        {/* LOGO + INFO */}
         <div className={styles.section}>
           <div className={styles.iconWrapper}>
             <Image
-              src="/logo/LogoFd3.png"
+              src="/logo/LogoFd1.png"
               alt="FD Forge Media"
-              width={220}
-              height={120}
+              width={160}
+              height={90}
               className={styles.icon}
             />
           </div>
@@ -56,39 +50,9 @@ const Footer = () => {
             digitales innovadoras, contenido de alto impacto y campañas
             orientadas a resultados.
           </p>
-
-          <div className={styles.socials}>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.instagram}
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.facebook}
-            >
-              <FaFacebookF />
-            </a>
-
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.whatsapp}
-            >
-              <FaWhatsapp />
-            </a>
-          </div>
         </div>
 
-        {/* ENLACES */}
-
+        {/* NAVEGACIÓN */}
         {isHome && (
           <div className={styles.section}>
             <h4 className={styles.subtitle}>Navegación</h4>
@@ -108,23 +72,37 @@ const Footer = () => {
             </ul>
           </div>
         )}
+      </div>
 
-        {/* SERVICIOS */}
+      {/* REDES FUERA DEL GRID */}
+      <div className={styles.socialWrapper}>
+        <div className={styles.socials}>
+          <a
+            href="https://www.instagram.com/fdforgemedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.instagram}
+          >
+            <FaInstagram />
+          </a>
 
-        <div className={styles.section}>
-          <h4 className={styles.subtitle}>Servicios</h4>
+          <a
+            href="https://www.facebook.com/fdforgemedia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.facebook}
+          >
+            <FaFacebookF />
+          </a>
 
-          <ul className={styles.list}>
-            <li>Branding</li>
-
-            <li>Social Media</li>
-
-            <li>Publicidad Digital</li>
-
-            <li>Diseño Web</li>
-
-            <li>Estrategia Digital</li>
-          </ul>
+          <a
+            href="https://wa.me/542645878987"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whatsapp}
+          >
+            <FaWhatsapp />
+          </a>
         </div>
       </div>
 

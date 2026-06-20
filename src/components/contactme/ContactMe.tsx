@@ -1,17 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
-
 import Image from "next/image";
-
 import { sileo } from "sileo";
 
 import styles from "../../styles/contactme/ContactMe.module.css";
 
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
-
 import { SlideInFromLeft } from "../shared/slideInfromleft";
-
 import { SlideInFromRight } from "../shared/slideInfromright";
 
 import {
@@ -23,14 +19,14 @@ import {
   FaFacebookF,
   FaMapMarkerAlt,
   FaEnvelope,
+  FaBuilding,
 } from "react-icons/fa";
 
 const ContactMe: React.FC = () => {
   const [formData, setFormData] = useState({
     name: "",
-
     email: "",
-
+    empresa: "",
     message: "",
   });
 
@@ -41,7 +37,6 @@ const ContactMe: React.FC = () => {
   ) => {
     setFormData({
       ...formData,
-
       [e.target.name]: e.target.value,
     });
   };
@@ -49,16 +44,16 @@ const ContactMe: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (loading) return;
+
     setLoading(true);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(formData),
       });
 
@@ -67,24 +62,22 @@ const ContactMe: React.FC = () => {
       if (!response.ok) {
         sileo.error({
           title: "Error",
-
           description: data?.error || "Error al enviar el mensaje.",
         });
 
+        setLoading(false);
         return;
       }
 
       sileo.success({
         title: "Mensaje enviado",
-
         description: "Nos pondremos en contacto pronto.",
       });
 
       setFormData({
         name: "",
-
         email: "",
-
+        empresa: "",
         message: "",
       });
     } catch (error) {
@@ -92,7 +85,6 @@ const ContactMe: React.FC = () => {
 
       sileo.error({
         title: "Error de conexión",
-
         description: "No se pudo conectar con el servidor.",
       });
     } finally {
@@ -115,7 +107,6 @@ const ContactMe: React.FC = () => {
 
       <div className={styles.contactWrapper}>
         {/* INFORMACIÓN */}
-
         <SlideInFromLeft delay={0.1}>
           <div className={styles.contactInfo}>
             <h3 className={styles.cardTitle}>
@@ -127,32 +118,25 @@ const ContactMe: React.FC = () => {
               <FaMapMarkerAlt />
               Ubicación
             </h4>
-
             <p>San Juan, Argentina</p>
-
-            <p>Trabajamos de forma presencial y remota.</p>
 
             <h4 className={styles.infoTitle}>
               <FaPhoneAlt />
               WhatsApp
             </h4>
-
             <p>
-              <FaWhatsapp />
-              +542645878987
+              <FaWhatsapp /> +542645878987
             </p>
 
             <h4 className={styles.infoTitle}>
               <FaEnvelope />
               Correo electrónico
             </h4>
-
             <p>fdforgemedia@gmail.com</p>
           </div>
         </SlideInFromLeft>
 
         {/* FORMULARIO */}
-
         <SlideInFromRight delay={0.15}>
           <form onSubmit={handleSubmit} className={styles.contactForm}>
             <h3 className={styles.cardTitle}>
@@ -180,6 +164,16 @@ const ContactMe: React.FC = () => {
               required
             />
 
+            {/* EMPRESA NUEVO CAMPO */}
+            <input
+              type="text"
+              name="empresa"
+              placeholder="Tu empresa (opcional)"
+              value={formData.empresa}
+              onChange={handleChange}
+              className={styles.inputField}
+            />
+
             <textarea
               name="message"
               placeholder="Contanos sobre tu proyecto..."
@@ -194,14 +188,13 @@ const ContactMe: React.FC = () => {
               className={styles.submitButton}
               disabled={loading}
             >
-              {loading ? "Enviando..." : "Enviar mensaje"}
+              {loading ? "Enviando mensaje..." : "Enviar mensaje"}
             </button>
           </form>
         </SlideInFromRight>
       </div>
 
       {/* REDES */}
-
       <FadeInOnScroll delay={0.3}>
         <div className={styles.socialCardWrapper}>
           <div className={styles.socialCard}>

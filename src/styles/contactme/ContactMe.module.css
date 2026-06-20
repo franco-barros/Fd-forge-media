@@ -1,143 +1,223 @@
 .contactSection {
   width: 100%;
-
-  padding: 6rem 1.5rem;
-
+  padding: 7rem 1.5rem;
   background: #010101;
-
   overflow: hidden;
+  position: relative;
+  font-family: var(--font-rethink-sans);
 }
+
+/* ======================= */
+/* FONDO ANIMADO */
+/* ======================= */
+
+.contactSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(4, 81, 215, 0.12), transparent 25%),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(27, 108, 255, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(255, 255, 255, 0.04),
+      transparent 20%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contactSection > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ======================= */
+/* BADGE */
+/* ======================= */
 
 .badgeWrapper {
   display: flex;
-
   justify-content: center;
-
   margin-bottom: 2rem;
 }
 
 .badge {
   display: inline-flex;
-
   align-items: center;
-
-  padding: 0.75rem 1.3rem;
-
+  padding: 0.8rem 1.4rem;
   border-radius: 999px;
-
   background: rgba(4, 81, 215, 0.1);
-
   border: 1px solid rgba(4, 81, 215, 0.35);
-
   color: #1b6cff;
-
   font-size: 1rem;
-
   font-weight: 700;
 }
+
+/* ======================= */
+/* TEXTO SUPERIOR */
+/* ======================= */
 
 .subHeading {
   max-width: 720px;
-
   margin: 0 auto 4rem;
-
   color: #b8b8b8;
-
   font-size: 1.1rem;
-
   line-height: 1.8;
-
   text-align: center;
 }
 
-.contactWrapper {
-  max-width: 1200px;
+/* ======================= */
+/* CONTENEDOR */
+/* ======================= */
 
+.contactWrapper {
+  max-width: 1250px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+/* ======================= */
+/* CARDS GENERALES */
+/* ======================= */
+
+.contactInfo,
+.contactForm,
+.socialCard {
+  position: relative;
+  background: #0d1117;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35),
+    0 0 30px rgba(4, 81, 215, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 
   display: flex;
-
-  gap: 2rem;
-
-  align-items: stretch;
+  flex-direction: column;
 }
+
+/* línea superior */
+.contactInfo::before,
+.contactForm::before,
+.socialCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #0451d7,
+    #1b6cff,
+    transparent
+  );
+}
+
+/* ======================= */
+/* CARDS DE ARRIBA */
+/* ======================= */
 
 .contactInfo,
 .contactForm {
-  flex: 1;
-
+  width: 520px;
+  max-width: 520px;
   display: flex;
-
   flex-direction: column;
-
-  background: #0d1117;
-
-  border-radius: 24px;
-
   padding: 2.5rem;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  min-height: 600px;
 
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
-  min-height: 520px;
+  /* 🔥 CLAVE: igualdad real */
+  height: 100%;
 }
+
+/* ======================= */
+/* FORM */
+/* ======================= */
+
+.contactForm {
+  gap: 1.4rem;
+}
+
+/* ======================= */
+/* SOCIAL CARD */
+/* ======================= */
+
+.socialCardWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.socialCard {
+  width: 100%;
+  max-width: 450px;
+  padding: 2rem;
+  text-align: center;
+  min-height: 340px;
+}
+
+/* ======================= */
+/* TEXTOS */
+/* ======================= */
 
 .cardTitle {
   display: flex;
-
   align-items: center;
-
   gap: 0.8rem;
-
   color: #f8f8f8;
-
   font-size: 1.45rem;
-
   font-weight: 700;
-
   margin-bottom: 2rem;
+}
+
+.socialCard .cardTitle {
+  justify-content: center;
 }
 
 .infoTitle {
   display: flex;
-
   align-items: center;
-
   gap: 0.7rem;
-
   color: #0451d7;
-
   margin-top: 1.5rem;
-
   margin-bottom: 0.8rem;
-
   font-weight: 700;
 }
 
 .contactInfo p {
   color: #b8b8b8;
-
-  line-height: 1.8;
+  line-height: 1.9;
 }
+
+/* ======================= */
+/* INPUTS */
+/* ======================= */
 
 .inputField,
 .textAreaField {
-  background: #151b23;
-
+  width: 100%;
+  background: rgba(21, 27, 35, 0.7);
+  backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 14px;
-
+  border-radius: 16px;
   color: #f8f8f8;
-
-  padding: 1rem;
-
+  padding: 1rem 1.2rem;
   font-size: 1rem;
-
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .inputField::placeholder,
@@ -145,142 +225,114 @@
   color: #7f8b99;
 }
 
+.inputField:hover,
+.textAreaField:hover {
+  border-color: rgba(4, 81, 215, 0.35);
+}
+
 .inputField:focus,
 .textAreaField:focus {
   outline: none;
-
   border-color: #0451d7;
-
-  box-shadow: 0 0 0 4px rgba(4, 81, 215, 0.15);
+  box-shadow:
+    0 0 0 4px rgba(4, 81, 215, 0.15),
+    0 0 20px rgba(4, 81, 215, 0.25);
 }
 
 .textAreaField {
-  min-height: 180px;
-
+  min-height: 220px;
   resize: vertical;
 }
 
+/* ======================= */
+/* BOTÓN */
+/* ======================= */
+
 .submitButton {
   margin-top: auto;
-
   background: linear-gradient(135deg, #0451d7, #1b6cff);
-
   border: none;
-
-  border-radius: 14px;
-
+  border-radius: 16px;
   padding: 1rem;
-
   color: #fff;
-
   font-size: 1rem;
-
   font-weight: 700;
-
   cursor: pointer;
-
-  transition: 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .submitButton:hover {
-  transform: translateY(-2px);
-
-  box-shadow: 0 10px 25px rgba(4, 81, 215, 0.35);
+  transform: none;
+  box-shadow: none;
 }
 
-.socialCardWrapper {
-  display: flex;
-
-  justify-content: center;
-
-  margin-top: 4rem;
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.socialCard {
-  width: 100%;
-
-  max-width: 600px;
-
-  background: #0d1117;
-
-  border-radius: 24px;
-
-  padding: 2.5rem;
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  box-shadow:
-    0 15px 40px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
-  text-align: center;
-}
+/* ======================= */
+/* SOCIAL BUTTONS */
+/* ======================= */
 
 .socialCard p {
   color: #b8b8b8;
-
   margin: 1rem 0 2rem;
-
   line-height: 1.7;
-}
-
-.socialButtons {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 1rem;
-
-  flex-wrap: wrap;
 }
 
 .socialButton {
   display: flex;
-
   align-items: center;
-
-  gap: 0.7rem;
-
-  padding: 0.9rem 1.5rem;
-
-  border-radius: 14px;
-
+  gap: 0.8rem;
+  padding: 1rem 1.8rem;
+  border-radius: 16px;
   text-decoration: none;
-
   color: #fff;
-
   font-weight: 700;
+  transition: all 0.3s ease;
+}
 
-  transition: 0.3s ease;
+.socialButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .socialButton:hover {
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .instagramButton {
   background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af, #515bd4);
+  box-shadow: 0 10px 25px rgba(221, 42, 123, 0.3);
 }
 
 .facebookButton {
   background: linear-gradient(135deg, #1877f2, #166fe5);
+  box-shadow: 0 10px 25px rgba(24, 119, 242, 0.3);
 }
+
+/* ======================= */
+/* LOGO */
+/* ======================= */
 
 .bottomImageWrapper {
   width: 180px;
-
   aspect-ratio: 1;
-
   margin: 2rem auto 0;
 }
 
 .bottomImage {
   width: 100%;
-
   height: 100%;
-
   object-fit: contain;
 }
+
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
 
 @media (max-width: 768px) {
   .contactSection {
@@ -289,18 +341,27 @@
 
   .contactWrapper {
     flex-direction: column;
+    align-items: center;
   }
 
   .contactInfo,
   .contactForm {
+    width: 100%;
+    max-width: 100%;
     min-height: auto;
+    height: auto;
+  }
+
+  .socialCard {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cardTitle {
+    justify-content: center;
   }
 
   .socialButtons {
     flex-direction: column;
-  }
-
-  .bottomImageWrapper {
-    width: 140px;
   }
 }

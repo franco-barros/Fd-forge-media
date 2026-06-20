@@ -311,17 +311,47 @@
     padding: 5rem 1rem;
   }
 
-  .statsCard,
-  .servicesCard,
+  /* Ocultamos toda la columna izquierda */
+
+  .leftColumn {
+    display: none;
+  }
+
+  /* Dejamos una sola columna */
+
+  .layout {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+  }
+
+  /* Ajustes de la card principal */
+
   .infoWrapper {
     padding: 2rem;
   }
 
-  .valuesGrid {
-    grid-template-columns: 1fr;
-  }
-
   .textWrapper h2 {
     font-size: 2rem;
+
+    text-align: center;
+  }
+
+  .textWrapper p {
+    text-align: center;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+  }
+
+  .logoContainer {
+    margin-top: 2.5rem;
+  }
+
+  .logoWrapper {
+    width: 100px;
+
+    height: 100px;
   }
 }

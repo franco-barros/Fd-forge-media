@@ -1,29 +1,129 @@
 .whatsappButton {
   position: fixed;
-  bottom: 0.55rem;
-  right: 0.55rem;
-  background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%);
-  color: white;
-  padding: 0.75rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
+
+  width: 60px;
+  height: 60px;
+
   border: none;
   border-radius: 50%;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+
+  background: linear-gradient(135deg, #25d366 0%, #1ebe57 100%);
+  color: white;
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(37, 211, 102, 0.25);
+
   z-index: 10000;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
-  width: 48px;
-  height: 48px;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.2s ease;
+
+  transition: all 0.25s ease;
+
+  overflow: hidden;
+
+  animation: whatsappFloat 3.5s ease-in-out infinite;
 }
+
+/* ======================= */
+/* SHIMMER */
+/* ======================= */
+
+.whatsappButton::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+
+  transform: rotate(25deg);
+  animation: shimmer 4.5s infinite linear;
+}
+
+/* ======================= */
+/* HOVER */
+/* ======================= */
 
 .whatsappButton:hover {
-  background: linear-gradient(135deg, #1ebe57 0%, #25d366 100%);
-  transform: scale(1.1);
+  transform: translateY(-5px) scale(1.08);
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.4),
+    0 0 35px rgba(37, 211, 102, 0.5);
 }
 
+/* ======================= */
+/* ACTIVE */
+/* ======================= */
+
+.whatsappButton:active {
+  transform: scale(0.95);
+}
+
+/* ======================= */
+/* ICONO */
+/* ======================= */
+
 .icon {
-  font-size: 24px;
+  font-size: 26px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ======================= */
+/* ANIMACIONES */
+/* ======================= */
+
+@keyframes whatsappFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(25deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(25deg);
+  }
+}
+
+/* ======================= */
+/* MOBILE */
+/* ======================= */
+
+@media (max-width: 768px) {
+  .whatsappButton {
+    width: 52px;
+    height: 52px;
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
 }

@@ -8,6 +8,9 @@ import { ClientNavbarWrapper } from "../components/clientnavbarwrapper";
 
 import { Rethink_Sans, Jolly_Lodger } from "next/font/google";
 
+// 👇 SOLO AGREGADO (Sileo)
+import { Toaster } from "sileo";
+
 const rethinkSans = Rethink_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -22,10 +25,8 @@ const jolly = Jolly_Lodger({
 
 export const metadata = {
   title: "FD Forge Media | Marketing Digital y Publicidad",
-
   description:
     "Agencia de marketing digital y publicidad especializada en estrategias, contenido creativo, redes sociales y crecimiento de marcas.",
-
   keywords: [
     "marketing digital",
     "publicidad",
@@ -35,7 +36,6 @@ export const metadata = {
     "agencia digital",
     "FD Forge Media",
   ],
-
   authors: [{ name: "FD Forge Media" }],
 };
 
@@ -49,6 +49,9 @@ export default function RootLayout({
       </head>
 
       <body>
+        {/* 🔥 SILEO GLOBAL (NO TOCA TU ESTRUCTURA) */}
+        <Toaster position="top-center" offset={62} />
+
         <ClientNavbarWrapper>{children}</ClientNavbarWrapper>
 
         <Footer />
