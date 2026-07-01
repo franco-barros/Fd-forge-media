@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import { Footer } from "../components/footer";
 import { ClientNavbarWrapper } from "../components/clientnavbarwrapper";
 
-import MetaPixel from "../components/metapixel/MetaPixel";
+//import MetaPixel from "../components/metapixel/MetaPixel";//
 import MetaPixelPageView from "../components/metapixel/MetaPixelPageView";
 
 import { Rethink_Sans, Jolly_Lodger } from "next/font/google";
@@ -53,7 +53,7 @@ export default function RootLayout({
 
       <body>
         {/* Meta Pixel INIT */}
-        <MetaPixel />
+        {/* <MetaPixel /> */}
 
         {/* PageView tracking en cambios de ruta */}
         <MetaPixelPageView />
