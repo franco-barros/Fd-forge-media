@@ -8,6 +8,9 @@ import HeroBackground from "../animations/animatedbackground";
 
 import styles from "../../styles/hero/Hero.module.css";
 
+// 👇 IMPORTS DE TRACKING (según tu facebook.ts tipado)
+import { lead, customEvent } from "../metapixel/facebook";
+
 const Hero = () => {
   const handleScrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({
@@ -41,9 +44,7 @@ const Hero = () => {
             alt="FD Forge Media"
             fill
             priority
-            style={{
-              objectFit: "contain",
-            }}
+            style={{ objectFit: "contain" }}
           />
         </motion.div>
 
@@ -59,16 +60,32 @@ const Hero = () => {
         </p>
 
         <div className={styles.buttons}>
+          {/* 🔵 BOTÓN: SERVICIOS */}
           <button
             className={`${styles.btn} ${styles.btnPrimary}`}
-            onClick={() => handleScrollTo("section-practiceareas")}
+            onClick={() => {
+              customEvent("ViewContent", {
+                section: "hero",
+                action: "view_services",
+              });
+
+              handleScrollTo("section-practiceareas");
+            }}
           >
             Nuestros servicios
           </button>
 
+          {/* 🔴 BOTÓN: CONTACTO (LEAD REAL) */}
           <button
             className={`${styles.btn} ${styles.btnSecondary}`}
-            onClick={() => handleScrollTo("contact")}
+            onClick={() => {
+              lead({
+                source: "hero_cta",
+                section: "hero",
+              });
+
+              handleScrollTo("contact");
+            }}
           >
             Contactanos
           </button>

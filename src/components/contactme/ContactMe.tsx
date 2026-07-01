@@ -10,6 +10,8 @@ import { FadeInOnScroll } from "../shared/fadeInonscroll";
 import { SlideInFromLeft } from "../shared/slideInfromleft";
 import { SlideInFromRight } from "../shared/slideInfromright";
 
+import { lead, contact } from "../metapixel/facebook";
+
 import {
   FaInfoCircle,
   FaEnvelopeOpenText,
@@ -19,7 +21,6 @@ import {
   FaFacebookF,
   FaMapMarkerAlt,
   FaEnvelope,
-  FaBuilding,
 } from "react-icons/fa";
 
 const ContactMe: React.FC = () => {
@@ -72,6 +73,12 @@ const ContactMe: React.FC = () => {
       sileo.success({
         title: "Mensaje enviado",
         description: "Nos pondremos en contacto pronto.",
+      });
+
+      // 👇 META EVENT (AGREGADO)
+      lead({
+        source: "contact_form",
+        section: "contact_page",
       });
 
       setFormData({
@@ -210,6 +217,12 @@ const ContactMe: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.socialButton} ${styles.instagramButton}`}
+                onClick={() =>
+                  contact({
+                    method: "instagram",
+                    source: "contact_social",
+                  })
+                }
               >
                 <FaInstagram />
                 Instagram
@@ -220,6 +233,12 @@ const ContactMe: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${styles.socialButton} ${styles.facebookButton}`}
+                onClick={() =>
+                  contact({
+                    method: "facebook",
+                    source: "contact_social",
+                  })
+                }
               >
                 <FaFacebookF />
                 Facebook

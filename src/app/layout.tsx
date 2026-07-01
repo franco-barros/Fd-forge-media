@@ -6,6 +6,9 @@ import { ReactNode } from "react";
 import { Footer } from "../components/footer";
 import { ClientNavbarWrapper } from "../components/clientnavbarwrapper";
 
+import MetaPixel from "../components/metapixel/MetaPixel";
+import MetaPixelPageView from "../components/metapixel/MetaPixelPageView";
+
 import { Rethink_Sans, Jolly_Lodger } from "next/font/google";
 
 // 👇 SOLO AGREGADO (Sileo)
@@ -49,7 +52,13 @@ export default function RootLayout({
       </head>
 
       <body>
-        {/* 🔥 SILEO GLOBAL (NO TOCA TU ESTRUCTURA) */}
+        {/* Meta Pixel INIT */}
+        <MetaPixel />
+
+        {/* PageView tracking en cambios de ruta */}
+        <MetaPixelPageView />
+
+        {/* 🔥 SILEO GLOBAL */}
         <Toaster position="top-center" offset={62} />
 
         <ClientNavbarWrapper>{children}</ClientNavbarWrapper>
