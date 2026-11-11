@@ -37,7 +37,7 @@ const Footer = () => {
         <div className={styles.section}>
           <div className={styles.iconWrapper}>
             <Image
-              src="/logo/LogoFd1.png"
+              src="/logo/LogoFDForgeMediaNaranja.png"
               alt="FD Forge Media"
               width={160}
               height={90}

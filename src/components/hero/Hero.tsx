@@ -40,7 +40,7 @@ const Hero = () => {
           }}
         >
           <Image
-            src="/logo/LogoFd2.png"
+            src="/logo/LogoFDForgeMediaNaranja.png"
             alt="FD Forge Media"
             fill
             priority

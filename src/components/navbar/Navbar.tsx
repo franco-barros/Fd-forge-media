@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
       >
         <div className={styles.leftIconWrapper}>
           <Image
-            src="/logo/LogoFd3.png"
+            src="/logo/LogoFDForgeMediaNaranja2.png"
             alt="Logo izquierdo"
             fill
             style={{ objectFit: "contain" }}

@@ -12,7 +12,7 @@ import PracticeAreasMobile from "./practiceareasmobile";
 
 import { FadeInOnScroll } from "../shared/fadeInonscroll";
 
-import AnimatedBackground from "../animations/animatedbackground";
+import AnimatedCircles from "../animations/animatedcircles";
 
 interface PracticeArea {
   id: string;
@@ -134,7 +134,7 @@ const PracticeAreas: React.FC = () => {
   return (
     <section id="section-practiceareas" className={styles.practiceAreasSection}>
       {/* BACKGROUND */}
-      <AnimatedBackground />
+      <AnimatedCircles />
 
       {/* CONTENIDO */}
       <div className={styles.content}>

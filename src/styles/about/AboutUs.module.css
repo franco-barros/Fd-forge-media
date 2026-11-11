@@ -35,11 +35,11 @@
 
   border-radius: 999px;
 
-  background: rgba(4, 81, 215, 0.1);
+  background: rgba(255, 140, 35, 0.1);
 
-  border: 1px solid rgba(4, 81, 215, 0.35);
+  border: 1px solid rgba(255, 140, 35, 0.35);
 
-  color: #1b6cff;
+  color: #ff8c23;
 
   font-weight: 700;
 
@@ -126,8 +126,8 @@
   background: linear-gradient(
     90deg,
     transparent,
-    #0451d7,
-    #1b6cff,
+    #e6640f,
+    #ff8c23,
     transparent
   );
 }
@@ -180,7 +180,7 @@
 }
 
 .valueItem svg {
-  color: #0451d7;
+  color: #ff8c23;
 }
 
 .valueItem span {
@@ -224,7 +224,7 @@
 }
 
 .serviceItem svg {
-  color: #0451d7;
+  color: #ff8c23;
 
   flex-shrink: 0;
 }
@@ -232,9 +232,9 @@
 .serviceItem:hover {
   transform: translateX(6px);
 
-  background: rgba(4, 81, 215, 0.1);
+  background: rgba(255, 140, 35, 0.1);
 
-  border-color: rgba(4, 81, 215, 0.35);
+  border-color: rgba(255, 140, 35, 0.35);
 }
 
 /* ======================= */

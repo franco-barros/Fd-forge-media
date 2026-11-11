@@ -48,7 +48,11 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${rethinkSans.variable} ${jolly.variable}`}>
       <head>
-        <link rel="icon" href="/logo/LogoFd1.png" sizes="any" />
+        <link
+          rel="icon"
+          href="/logo/LogoFDForgeMediaNaranja1.png"
+          sizes="any"
+        />
       </head>
 
       <body>

@@ -17,9 +17,9 @@
   background: linear-gradient(
     90deg,
     transparent,
-    #0451d7,
+    #e6640f,
     #c8ae7d,
-    #0451d7,
+    #ff8c23,
     transparent
   );
 }
@@ -40,7 +40,7 @@
   max-width: 1100px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 👈 dos columnas iguales */
+  grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
   align-items: start;
 }
@@ -57,11 +57,11 @@
 }
 
 /* ======================= */
-/* LOGO (más chico) */
+/* LOGO */
 /* ======================= */
 
 .iconWrapper {
-  width: 140px; /* 👈 reducido */
+  width: 140px;
 }
 
 .icon {
@@ -78,7 +78,7 @@
   color: #d7d7d7;
   line-height: 1.8;
   font-size: 1rem;
-  max-width: 100%; /* 👈 igual que navegación */
+  max-width: 100%;
 }
 
 /* ======================= */
@@ -101,7 +101,7 @@
   width: 55px;
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #0451d7, #c8ae7d);
+  background: linear-gradient(90deg, #e6640f, #ff8c23);
 }
 
 /* ======================= */
@@ -128,7 +128,7 @@
 }
 
 .linkButton:hover {
-  color: #0451d7;
+  color: #ff8c23;
   transform: translateX(6px);
 }
 
@@ -138,12 +138,12 @@
 }
 
 .list li:hover {
-  color: #0451d7;
+  color: #ff8c23;
   transform: translateX(6px);
 }
 
 /* ======================= */
-/* REDES (FUERA DEL GRID) */
+/* REDES */
 /* ======================= */
 
 .socialWrapper {

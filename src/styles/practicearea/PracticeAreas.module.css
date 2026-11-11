@@ -1,19 +1,12 @@
 .practiceAreasSection {
   width: 100%;
-
   padding: 7rem 1.5rem;
-
   background: #010101;
-
   font-family: var(--font-rethink-sans);
-
   color: #f8f8f8;
-
   position: relative;
-
   overflow: hidden;
-
-  isolation: isolate; /* NUEVO */
+  isolation: isolate;
 }
 
 /* ======================= */
@@ -22,7 +15,6 @@
 
 .content {
   position: relative;
-
   z-index: 2;
 }
 
@@ -32,31 +24,20 @@
 
 .badgeWrapper {
   display: flex;
-
   justify-content: center;
-
   margin-bottom: 3rem;
 }
 
 .badge {
   display: inline-flex;
-
   align-items: center;
-
   gap: 0.6rem;
-
   padding: 0.75rem 1.3rem;
-
   border-radius: 999px;
-
-  background: rgba(4, 81, 215, 0.1);
-
-  border: 1px solid rgba(4, 81, 215, 0.35);
-
-  color: #1b6cff;
-
+  background: rgba(255, 140, 35, 0.1);
+  border: 1px solid rgba(255, 140, 35, 0.35);
+  color: #ff8c23;
   font-size: 1rem;
-
   font-weight: 700;
 }
 
@@ -66,50 +47,33 @@
 
 .description {
   max-width: 850px;
-
   margin: 0 auto 4rem;
-
   padding: 2rem;
-
   background: #0d1117;
-
   border-radius: 24px;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   text-align: center;
-
   color: #b8b8b8;
-
   font-size: 1.08rem;
-
   line-height: 1.8;
-
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
   position: relative;
 }
 
 .description::before {
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 0;
-
   width: 100%;
-
   height: 2px;
-
   background: linear-gradient(
     90deg,
     transparent,
-    #0451d7,
-    #1b6cff,
+    #e6640f,
+    #ff8c23,
     transparent
   );
 }
@@ -125,13 +89,9 @@
 @media (min-width: 768px) {
   .gridDesktop {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 2rem;
-
     max-width: 1200px;
-
     margin: auto;
   }
 }
@@ -142,9 +102,7 @@
 
 .sliderMobile {
   display: block;
-
   width: 100%;
-
   overflow: hidden;
 }
 
@@ -160,42 +118,29 @@
 
 .areaCard {
   position: relative;
-
   background: #0d1117;
-
   border-radius: 24px;
-
   padding: 2rem;
-
   border: 1px solid rgba(255, 255, 255, 0.08);
-
   overflow: hidden;
-
   box-shadow:
     0 15px 40px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.03);
-
   z-index: 2;
 }
 
 .areaCard::before {
   content: "";
-
   position: absolute;
-
   top: 0;
-
   left: 0;
-
   width: 100%;
-
   height: 2px;
-
   background: linear-gradient(
     90deg,
     transparent,
-    #0451d7,
-    #1b6cff,
+    #e6640f,
+    #ff8c23,
     transparent
   );
 }
@@ -206,24 +151,15 @@
 
 .iconWrapper {
   width: 64px;
-
   height: 64px;
-
   margin: 0 auto 1.5rem;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 18px;
-
-  background: rgba(4, 81, 215, 0.08);
-
-  border: 1px solid rgba(4, 81, 215, 0.25);
-
-  color: #0451d7;
+  background: rgba(230, 100, 15, 0.08);
+  border: 1px solid rgba(230, 100, 15, 0.25);
+  color: #e6640f;
 }
 
 /* ======================= */
@@ -232,15 +168,10 @@
 
 .areaCard h4 {
   text-align: center;
-
   font-size: 1.35rem;
-
   font-weight: 700;
-
   color: #f8f8f8;
-
   margin-bottom: 1.8rem;
-
   line-height: 1.3;
 }
 
@@ -250,29 +181,19 @@
 
 .itemList {
   list-style: none;
-
   padding: 0;
-
   margin: 0;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 1rem;
 }
 
 .itemList li {
   display: flex;
-
   align-items: flex-start;
-
   gap: 0.8rem;
-
   color: #b8b8b8;
-
   line-height: 1.7;
-
   font-size: 0.98rem;
 }
 
@@ -282,24 +203,15 @@
 
 .checkCircle {
   width: 22px;
-
   height: 22px;
-
   flex-shrink: 0;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   border-radius: 50%;
-
-  background: rgba(4, 81, 215, 0.1);
-
-  border: 1px solid rgba(4, 81, 215, 0.3);
-
-  color: #0451d7;
+  background: rgba(230, 100, 15, 0.1);
+  border: 1px solid rgba(230, 100, 15, 0.3);
+  color: #e6640f;
 }
 
 /* ======================= */
@@ -317,9 +229,7 @@
 
   .areaCard {
     width: 92%;
-
     margin: auto;
-
     padding: 2rem;
   }
 

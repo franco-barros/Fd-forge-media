@@ -247,7 +247,7 @@ const ContactMe: React.FC = () => {
 
             <div className={styles.bottomImageWrapper}>
               <Image
-                src="/logo/LogoFd3.png"
+                src="/logo/LogoFDForgeMediaNaranja2.png"
                 alt="FD Forge Media"
                 width={180}
                 height={180}

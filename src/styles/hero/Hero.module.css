@@ -47,13 +47,13 @@
 
   margin-bottom: 1.5rem;
 
-  border: 1px solid #0451d7;
+  border: 1px solid #ff8c23;
 
   border-radius: 999px;
 
-  background: rgba(4, 81, 215, 0.1);
+  background: rgba(255, 140, 35, 0.1);
 
-  color: #1b6cff;
+  color: #ff8c23;
 
   font-size: 0.9rem;
 
@@ -113,13 +113,13 @@
 }
 
 .btnPrimary {
-  background: #0451d7;
+  background: #ff8c23;
 
   color: #fff;
 }
 
 .btnPrimary:hover {
-  background: #1b6cff;
+  background: #ffa34d;
 
   transform: translateY(-3px);
 }
@@ -127,13 +127,15 @@
 .btnSecondary {
   background: transparent;
 
-  border: 1px solid #0451d7;
+  border: 1px solid #ff8c23;
 
   color: #fff;
 }
 
 .btnSecondary:hover {
-  background: #0451d7;
+  background: #e6640f;
+
+  border-color: #e6640f;
 
   transform: translateY(-3px);
 }

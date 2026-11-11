@@ -25,31 +25,31 @@
 
   border-radius: 50%;
 
-  border: 2px solid rgba(27, 108, 255, 0.95);
+  border: 2px solid rgba(255, 140, 35, 0.95);
 
-  background: rgba(27, 108, 255, 0.12);
+  background: rgba(255, 140, 35, 0.12);
 
   box-shadow:
-    0 0 12px rgba(27, 108, 255, 0.9),
-    0 0 25px rgba(27, 108, 255, 0.7),
-    0 0 50px rgba(27, 108, 255, 0.35);
+    0 0 12px rgba(255, 140, 35, 0.9),
+    0 0 25px rgba(255, 140, 35, 0.7),
+    0 0 50px rgba(255, 140, 35, 0.35);
 
   animation: floatCircle linear infinite;
 
   will-change: transform, opacity;
 }
 
-/* Variante azul intensa */
+/* Variante naranja intensa */
 
 .circle:nth-child(3n) {
-  border-color: rgba(4, 81, 215, 1);
+  border-color: rgba(230, 100, 15, 1);
 
-  background: rgba(4, 81, 215, 0.18);
+  background: rgba(230, 100, 15, 0.18);
 
   box-shadow:
-    0 0 14px rgba(4, 81, 215, 1),
-    0 0 28px rgba(4, 81, 215, 0.8),
-    0 0 55px rgba(4, 81, 215, 0.45);
+    0 0 14px rgba(230, 100, 15, 1),
+    0 0 28px rgba(230, 100, 15, 0.8),
+    0 0 55px rgba(230, 100, 15, 0.45);
 }
 
 /* Variante blanca */
@@ -114,8 +114,8 @@
     border-width: 1.8px;
 
     box-shadow:
-      0 0 10px rgba(27, 108, 255, 0.9),
-      0 0 22px rgba(27, 108, 255, 0.7),
-      0 0 40px rgba(27, 108, 255, 0.35);
+      0 0 10px rgba(255, 140, 35, 0.9),
+      0 0 22px rgba(255, 140, 35, 0.7),
+      0 0 40px rgba(255, 140, 35, 0.35);
   }
 }
