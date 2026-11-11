@@ -146,7 +146,7 @@ const AboutUs: React.FC = () => {
                 <div className={styles.logoContainer}>
                   <div className={styles.logoWrapper}>
                     <Image
-                      src="/logo/LogoForgeMediaNaranja2.png"
+                      src="/logo/LogoFDForgeMediaNaranja2.png"
                       alt="FD Forge Media"
                       fill
                       sizes="120px"
